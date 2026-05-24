@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>secondhand.studio | Curated Vintage & Streetwear</title>
+    <title>secondhand.studio | Curated Vintage</title>
     <style>
         * {
             margin: 0;
@@ -11,108 +11,148 @@
             box-sizing: border-box;
         }
         body {
-            background-color: #0b0b0c;
-            color: #f5f5f7;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f6f5f0; /* Creamy off-white background matching the logo */
+            color: #2b2c28; /* Deep olive/charcoal text color */
+            font-family: "Georgia", serif; /* Elegant serif font to match the logo style */
             padding: 20px;
         }
         header {
             text-align: center;
-            padding: 60px 20px 40px 20px;
+            padding: 40px 20px 20px 20px;
         }
-        h1 {
-            font-size: 2.2rem;
-            letter-spacing: 2px;
-            text-transform: lowercase;
-            font-weight: 700;
-            margin-bottom: 8px;
+        .logo-placeholder {
+            border: 2px solid #525749; /* Olive border matching the logo graphic */
+            border-radius: 50%;
+            width: 220px;
+            height: 140px;
+            margin: 0 auto 15px auto;
+            background-color: #fcfbfa; /* Slightly brighter crisp center to isolate the logo */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); /* Subtle separation from the background */
+        }
+        .logo-text-top {
+            font-size: 1.8rem;
+            font-weight: normal;
+            letter-spacing: -0.5px;
+            color: #525749;
+        }
+        .logo-text-bottom {
+            font-size: 1.6rem;
+            font-weight: normal;
+            margin-top: -5px;
+            color: #525749;
+        }
+        .divider {
+            width: 100px;
+            height: 1px;
+            background-color: #525749;
+            margin: 4px 0;
         }
         header p {
-            color: #86868b;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: #72756d;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
         }
         .catalog {
-            max-width: 500px;
-            margin: 0 auto 40px auto;
-            background: #121214;
-            border: 1px solid #222225;
-            border-radius: 12px;
-            padding: 24px;
+            max-width: 450px;
+            margin: 20px auto 40px auto;
+            background: #ffffff;
+            border: 1px solid #e3e2dc;
+            border-radius: 20px;
+            padding: 30px 24px;
             text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
         }
         .catalog h2 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            font-weight: normal;
             margin-bottom: 12px;
-            color: #f5f5f7;
+            color: #525749;
         }
         .catalog p {
-            color: #a1a1a6;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: #72756d;
             font-size: 0.95rem;
-            line-height: 1.5;
-            margin-bottom: 20px;
+            line-height: 1.6;
         }
         .links-container {
             max-width: 400px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 14px;
         }
         .shop-btn {
-            background-color: #f5f5f7;
-            color: #0b0b0c;
+            background-color: #525749; /* Deep signature tone button */
+            color: #f6f5f0;
             text-decoration: none;
             padding: 16px;
-            border-radius: 30px;
+            border-radius: 40px;
             font-weight: 600;
             text-align: center;
             font-size: 1rem;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             transition: 0.2s ease;
         }
         .social-btn {
             background-color: transparent;
-            color: #f5f5f7;
+            color: #525749;
             text-decoration: none;
             padding: 16px;
-            border-radius: 30px;
+            border-radius: 40px;
             font-weight: 500;
             text-align: center;
             font-size: 1rem;
-            border: 1px solid #424245;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            border: 1px solid #c2c1ba;
             transition: 0.2s ease;
         }
-        .shop-btn:active, .social-btn:active {
-            opacity: 0.8;
+        .shop-btn:active {
+            background-color: #3b3e34;
+        }
+        .social-btn:active {
+            background-color: rgba(82, 87, 73, 0.05);
         }
         footer {
             text-align: center;
             margin-top: 60px;
-            color: #424245;
+            color: #a2a19b;
             font-size: 0.8rem;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>secondhand.studio</h1>
+        <div class="logo-placeholder">
+            <span class="logo-text-top">Secondhand</span>
+            <div class="divider"></div>
+            <span class="logo-text-bottom">Studio</span>
+        </div>
         <p>curated sustainable fashion</p>
     </header>
 
     <div class="catalog">
         <h2>Drop 01: Coming Soon</h2>
-        <p>We are currently sorting through premium vintage and modern streetwear pieces. Follow our socials to know exactly when the shop opens.</p>
+        <p>Premium vintage garments & modern wardrobe essentials are being sourced. Sign up or follow our socials for exclusive access to the initial collection release.</p>
     </div>
 
     <div class="links-container">
         <a href="#" class="shop-btn">Shop the Collection</a>
-        <a href="https://instagram.com" class="social-btn">Instagram</a>
+        <a href="https://instagram.com" class="social-btn">Follow Instagram</a>
         <a href="#" class="social-btn">Contact Studio</a>
     </div>
 
     <footer>
-        &copy; 2026 secondhand.studio
+        &copy; 2026 SECONDHAND.STUDIO
     </footer>
 
 </body>
