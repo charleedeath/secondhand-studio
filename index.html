@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth; /* Smooth scrolling when clicking top navigation */
+            scroll-behavior: smooth;
         }
         body {
             background-color: #f6f5f0; 
@@ -85,7 +85,7 @@
             margin-top: 10px;
         }
 
-        /* Unified Content Sections */
+        /* Content Sections */
         .section-box {
             max-width: 500px;
             margin: 0 auto 30px auto;
@@ -104,7 +104,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* Shop Section Styling */
+        /* Shop Section */
         #shop p {
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             color: #72756d;
@@ -130,7 +130,7 @@
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
-        /* Platforms / Authenticity Section */
+        /* Platforms */
         .platform-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -151,26 +151,31 @@
             letter-spacing: 0.5px;
         }
 
-        /* Reviews Section Styling */
+        /* Real Vinted Reviews Section */
         .review-stats {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
         }
         .stars {
-            color: #b5945b; /* Elegant gold/bronze star color */
-            font-size: 1.2rem;
+            color: #b5945b; 
+            font-size: 1.3rem;
             margin-bottom: 4px;
         }
         .stats-text {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #2b2c28;
             font-weight: 600;
         }
+        .stats-sub {
+            font-size: 0.8rem;
+            color: #72756d;
+            margin-top: 2px;
+        }
         .review-card {
             border-top: 1px solid #f0efe9;
-            padding: 15px 0 5px 0;
-            margin-top: 15px;
+            padding: 16px 0 4px 0;
+            margin-top: 12px;
         }
         .review-text {
             font-style: italic;
@@ -181,10 +186,11 @@
         }
         .review-author {
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #92958d;
+            font-weight: 600;
         }
 
         footer {
@@ -216,14 +222,14 @@
 
     <div class="section-box" id="shop">
         <h2>Drop 01: Coming Soon</h2>
-        <p>Premium vintage garments & modern wardrobe essentials are being sourced. View our current collections across our digital storefronts below.</p>
+        <p>Premium vintage garments & modern wardrobe essentials are currently being sourced. View our established collections across our digital marketplaces below.</p>
         <div class="links-container">
-            <a href="#" class="shop-btn">Browse Shop</a>
+            <a href="#platforms" class="shop-btn">View Marketplaces</a>
         </div>
     </div>
 
     <div class="section-box" id="platforms">
-        <h2>Find Us On</h2>
+        <h2>Our Trusted Stores</h2>
         <div class="platform-grid">
             <a href="https://vinted.co.uk" target="_blank" class="platform-card">Vinted</a>
             <a href="https://depop.com" target="_blank" class="platform-card">Depop</a>
@@ -232,21 +238,37 @@
     </div>
 
     <div class="section-box" id="reviews">
-        <h2>Customer Feedback</h2>
+        <h2>Verified Feedback</h2>
         
         <div class="review-stats">
             <div class="stars">★★★★★</div>
-            <div class="stats-text">150+ Perfect Reviews on Vinted</div>
+            <div class="stats-text">4.9 / 5.0 Rating</div>
+            <div class="stats-sub">Based on 159 sales history</div>
         </div>
 
         <div class="review-card">
-            <p class="review-text">"Absolutely love the jacket, exactly as described and lightning fast shipping! Thank you x"</p>
-            <p class="review-author">— Verified Vinted Buyer</p>
+            <p class="review-text">"Very beautiful thank you very much! Great communication A+++++ seller"</p>
+            <p class="review-author">— @monang23</p>
         </div>
 
         <div class="review-card">
-            <p class="review-text">"Item arrived beautifully packaged. Amazing communication, genuine 5-star seller."</p>
-            <p class="review-author">— Verified Depop Buyer</p>
+            <p class="review-text">"Packed so well and such a kind person! Didn’t have any issues whatsoever :)"</p>
+            <p class="review-author">— @erin040724</p>
+        </div>
+
+        <div class="review-card">
+            <p class="review-text">"Great supplier to deal with, item exactly as described and packed very well"</p>
+            <p class="review-author">— @sami270615</p>
+        </div>
+
+        <div class="review-card">
+            <p class="review-text">"Lovely item, friendly communication and prompt delivery. Happy with my purchase. Many thanks x"</p>
+            <p class="review-author">— @vladarya1102</p>
+        </div>
+
+        <div class="review-card">
+            <p class="review-text">"lovely and quick delivery which i needed for my sisters bday! thanks so much x"</p>
+            <p class="review-author">— @jodie_cherubini</p>
         </div>
     </div>
 
