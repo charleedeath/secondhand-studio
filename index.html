@@ -30,6 +30,8 @@
             text-transform: uppercase;
             font-size: 0.8rem;
             letter-spacing: 1.5px;
+            position: relative;
+            z-index: 10; /* Ensures navigation stays on top layer to be clickable */
         }
         nav a {
             text-decoration: none;
@@ -43,7 +45,7 @@
             font-weight: 600;
         }
 
-        /* Fixed Shopping Cart Button */
+        /* Fixed Shopping Cart Button - Fixed layout block */
         .cart-container {
             position: fixed;
             top: 15px;
@@ -52,7 +54,8 @@
             cursor: pointer;
             background: #ffffff;
             border: 1px solid #e3e2dc;
-            padding: 10px 12px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             display: flex;
@@ -295,7 +298,7 @@
 </head>
 <body>
 
-    <!-- Fixed Shopping Cart (Stays in corner) -->
+    <!-- Fixed Shopping Cart (Stays in corner safely) -->
     <div class="cart-container" id="cart-btn" onclick="alert('Your cart is currently empty. Shop drops coming soon!')">
         <span class="cart-icon">&#128722;</span> <!-- Unicode Cart Symbol -->
         <span class="cart-count" id="cart-counter">0</span>
@@ -495,6 +498,4 @@
     <script>
         function showPage(pageTarget) {
             const homeView = document.getElementById('home-view');
-            const reviewsView = document.getElementById('reviews-view');
-            const navHome = document.getElementById('nav-home');
-            const navReviews = document.getElementById('nav-review
+            const reviewsView = document
