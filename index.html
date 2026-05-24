@@ -119,7 +119,7 @@
             margin-top: 10px;
         }
 
-        /* Views handling system */
+        /* Views handling system (FIXED) */
         .page-view {
             display: none; 
         }
@@ -388,12 +388,15 @@
     <nav>
         <a id="nav-home" class="active" onclick="showPage('home')">Shop</a>
         <a id="nav-reviews" onclick="showPage('reviews')">Reviews</a>
+        <!-- Shopping Cart Trigger Button -->
         <button class="cart-nav-btn" onclick="toggleCart(true)">
+            <!-- Minimal SVG Shopping Bag Icon -->
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
             Cart <span class="cart-count" id="cart-counter">0</span>
         </button>
     </nav>
 
+    <!-- Side-out Shopping Cart View -->
     <div class="cart-overlay" id="cart-overlay" onclick="toggleCart(false)">
         <div class="cart-panel" onclick="event.stopPropagation()">
             <div class="cart-header">
@@ -503,5 +506,4 @@
             <div class="review-card"><p class="review-text">"Item exactly as described, fast shipping thank you!"</p><p class="review-author">— @gracieelizabeth1</p></div>
             <div class="review-card"><p class="review-text">"Fab seller, super fast shipping! Thank you x"</p><p class="review-author">— @kieralouise_</p></div>
             <div class="review-card"><p class="review-text">"Very beautiful thank you very much! Great communication A+++++ seller"</p><p class="review-author">— @monang23</p></div>
-            <div class="review-card"><p class="review-text">"Packed so well and such a kind person! Didn’t have any issues whatsoever :)"</p><p class="review-author">— @erin040724</p></div>
-            <div class="revie
+            <div class="review-card"><p class="review-text">"Packed so we
