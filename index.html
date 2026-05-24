@@ -30,8 +30,6 @@
             text-transform: uppercase;
             font-size: 0.8rem;
             letter-spacing: 1.5px;
-            position: relative;
-            z-index: 10; /* Ensures navigation stays on top layer to be clickable */
         }
         nav a {
             text-decoration: none;
@@ -43,46 +41,6 @@
         nav a:hover, nav a.active {
             color: #2b2c28;
             font-weight: 600;
-        }
-
-        /* Fixed Shopping Cart Button - Fixed layout block */
-        .cart-container {
-            position: fixed;
-            top: 15px;
-            right: 20px;
-            z-index: 1000;
-            cursor: pointer;
-            background: #ffffff;
-            border: 1px solid #e3e2dc;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-        }
-        .cart-container:hover {
-            background: #f1f0ea;
-            transform: scale(1.05);
-        }
-        .cart-icon {
-            font-size: 1.2rem;
-            color: #525749;
-        }
-        .cart-count {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background-color: #525749;
-            color: #f6f5f0;
-            font-family: -apple-system, sans-serif;
-            font-size: 0.7rem;
-            font-weight: bold;
-            padding: 2px 6px;
-            border-radius: 10px;
-            display: none;
         }
 
         header {
@@ -156,7 +114,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* Typography layout matching your Vinted screenshot text */
+        /* Typography layout matching Vinted screenshot text */
         .drop-soon-box {
             max-width: 500px;
             margin: 0 auto 30px auto;
@@ -298,12 +256,6 @@
 </head>
 <body>
 
-    <!-- Fixed Shopping Cart (Stays in corner safely) -->
-    <div class="cart-container" id="cart-btn" onclick="alert('Your cart is currently empty. Shop drops coming soon!')">
-        <span class="cart-icon">&#128722;</span> <!-- Unicode Cart Symbol -->
-        <span class="cart-count" id="cart-counter">0</span>
-    </div>
-
     <nav>
         <a id="nav-home" class="active" onclick="showPage('home')">Shop</a>
         <a id="nav-reviews" onclick="showPage('reviews')">Reviews</a>
@@ -317,7 +269,6 @@
         </div>
         <p>curated sustainable fashion</p>
     </header>
-
 
     <div id="home-view" class="page-view active-view">
         
@@ -359,7 +310,6 @@
 
     </div>
 
-
     <div id="reviews-view" class="page-view">
         
         <div class="section-box">
@@ -371,95 +321,24 @@
                 <div class="stats-sub">Consistently maintaining a stellar reputation</div>
             </div>
 
-            <div class="review-card">
-                <p class="review-text">"Amazing 🤩"</p>
-                <p class="review-author">— @isabella_grifffin</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"very kind, replied fast good seller"</p>
-                <p class="review-author">— @Starkvty</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Perfect thankyou x"</p>
-                <p class="review-author">— @Pinkrose65</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"good quality and everything fits as described"</p>
-                <p class="review-author">— @No_0ne07</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Everything was great, as described, fast contact and shipping. I highly recommend it."</p>
-                <p class="review-author">— @Marcint12</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Excellent seller bandana came in really good condition. Carefully sent thanks!"</p>
-                <p class="review-author">— @Eliza.essen</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Came in good condition and the seller was really lovely"</p>
-                <p class="review-author">— @beansontoast2000</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Quick and easy. Would recommend"</p>
-                <p class="review-author">— @yevaknott</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Better delivery time than Amazon! Thanks so much"</p>
-                <p class="review-author">— @stormsski</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Arrived today, I love it. Great seller"</p>
-                <p class="review-author">— @t3ddi3</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Thank you. Wonderful winter themed packaging too such a nice touch"</p>
-                <p class="review-author">— @babika2312</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"literally posted the same day and came in such cute packaging!"</p>
-                <p class="review-author">— @Deleted member</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Amazing seller - everything arrived in perfect condition"</p>
-                <p class="review-author">— @adibdin</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"The item was perfect!!!"</p>
-                <p class="review-author">— @smegasaurs</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Love the packaging. Amazing condition."</p>
-                <p class="review-author">— @airupcola</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Perfect thank you!! Xx"</p>
-                <p class="review-author">— @lucyleebank</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"lightning fast delivery and great item thanks"</p>
-                <p class="review-author">— @67pantsy</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"love it fits perfectly thanks"</p>
-                <p class="review-author">— @alexford039</p>
-            </div>
+            <div class="review-card"><p class="review-text">"Amazing 🤩"</p><p class="review-author">— @isabella_grifffin</p></div>
+            <div class="review-card"><p class="review-text">"very kind, replied fast good seller"</p><p class="review-author">— @Starkvty</p></div>
+            <div class="review-card"><p class="review-text">"Perfect thankyou x"</p><p class="review-author">— @Pinkrose65</p></div>
+            <div class="review-card"><p class="review-text">"good quality and everything fits as described"</p><p class="review-author">— @No_0ne07</p></div>
+            <div class="review-card"><p class="review-text">"Everything was great, as described, fast contact and shipping. I highly recommend it."</p><p class="review-author">— @Marcint12</p></div>
+            <div class="review-card"><p class="review-text">"Excellent seller bandana came in really good condition. Carefully sent thanks!"</p><p class="review-author">— @Eliza.essen</p></div>
+            <div class="review-card"><p class="review-text">"Came in good condition and the seller was really lovely"</p><p class="review-author">— @beansontoast2000</p></div>
+            <div class="review-card"><p class="review-text">"Quick and easy. Would recommend"</p><p class="review-author">— @yevaknott</p></div>
+            <div class="review-card"><p class="review-text">"Better delivery time than Amazon! Thanks so much"</p><p class="review-author">— @stormsski</p></div>
+            <div class="review-card"><p class="review-text">"Arrived today, I love it. Great seller"</p><p class="review-author">— @t3ddi3</p></div>
+            <div class="review-card"><p class="review-text">"Thank you. Wonderful winter themed packaging too such a nice touch"</p><p class="review-author">— @babika2312</p></div>
+            <div class="review-card"><p class="review-text">"literally posted the same day and came in such cute packaging!"</p><p class="review-author">— @Deleted member</p></div>
+            <div class="review-card"><p class="review-text">"Amazing seller - everything arrived in perfect condition"</p><p class="review-author">— @adibdin</p></div>
+            <div class="review-card"><p class="review-text">"The item was perfect!!!"</p><p class="review-author">— @smegasaurs</p></div>
+            <div class="review-card"><p class="review-text">"Love the packaging. Amazing condition."</p><p class="review-author">— @airupcola</p></div>
+            <div class="review-card"><p class="review-text">"Perfect thank you!! Xx"</p><p class="review-author">— @lucyleebank</p></div>
+            <div class="review-card"><p class="review-text">"lightning fast delivery and great item thanks"</p><p class="review-author">— @67pantsy</p></div>
+            <div class="review-card"><p class="review-text">"love it fits perfectly thanks"</p><p class="review-author">— @alexford039</p></div>
             <div class="review-card"><p class="review-text">"Brilliant seller, excellent communication, super fast delivery and item exactly as described ... thank you x"</p><p class="review-author">— @shellllouise1976</p></div>
             <div class="review-card"><p class="review-text">"Good Seller- lovely luxuriously soft fluffy jumper - sadly too small for me but I'll give to someone in the family - thank you x"</p><p class="review-author">— @velvety-style</p></div>
             <div class="review-card"><p class="review-text">"very helpful and kind seller, very communicative, fast shipping and cute top!!"</p><p class="review-author">— @krlkkma</p></div>
@@ -489,13 +368,39 @@
 
     </div>
 
-
     <footer>
         &copy; 2026 SECONDHAND.STUDIO
     </footer>
 
-
     <script>
         function showPage(pageTarget) {
             const homeView = document.getElementById('home-view');
-            const reviewsView = document
+            const reviewsView = document.getElementById('reviews-view');
+            const navHome = document.getElementById('nav-home');
+            const navReviews = document.getElementById('nav-reviews');
+
+            if (pageTarget === 'home') {
+                homeView.classList.add('active-view');
+                reviewsView.classList.remove('active-view');
+                navHome.classList.add('active');
+                navReviews.classList.remove('active');
+            } else if (pageTarget === 'reviews') {
+                homeView.classList.remove('active-view');
+                reviewsView.classList.add('active-view');
+                navHome.classList.remove('active');
+                navReviews.classList.add('active');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function scrollToPlatforms(event) {
+            event.preventDefault();
+            const targetElement = document.getElementById('platforms-box');
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+
+</body>
+</html>
