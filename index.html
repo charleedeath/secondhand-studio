@@ -153,6 +153,7 @@
             display: block;
             font-size: 0.95rem;
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            cursor: pointer;
         }
 
         /* Marketplace Platforms Grid */
@@ -174,6 +175,10 @@
             font-size: 0.85rem;
             font-weight: 600;
             letter-spacing: 0.5px;
+            transition: background 0.2s ease;
+        }
+        .platform-card:hover {
+            background: #f1f0ea;
         }
 
         /* Review Board Styling */
@@ -233,6 +238,10 @@
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             cursor: pointer;
             width: 100%;
+            transition: background 0.2s ease;
+        }
+        .view-all-btn:hover {
+            background-color: rgba(82, 87, 73, 0.05);
         }
 
         footer {
@@ -249,7 +258,7 @@
 
     <nav>
         <a id="nav-home" class="active" onclick="showPage('home')">Shop</a>
-        <a id="nav-reviews" onclick="showPage('reviews-page')">Reviews</a>
+        <a id="nav-reviews" onclick="showPage('reviews')">Reviews</a>
     </nav>
 
     <header>
@@ -266,8 +275,8 @@
         
         <div class="drop-soon-box">
             <h2>drop 01 coming soon...</h2>
-            <p>premium vintage and modern streetwear pieces. shipping within 1-2 days. standard career history.</p>
-            <a onclick="showPage('home')" href="#platforms-box" class="shop-btn">View Our Marketplaces</a>
+            <p>premium vintage and modern streetwear pieces. shipping within 1-2 days. tracked courier delivery.</p>
+            <a onclick="scrollToPlatforms(event)" class="shop-btn">View Our Marketplaces</a>
         </div>
 
         <div class="section-box" id="platforms-box">
@@ -297,7 +306,7 @@
                 <p class="review-author">— @erin040724</p>
             </div>
 
-            <button class="view-all-btn" onclick="showPage('reviews-page')">Read All Reviews</button>
+            <button class="view-all-btn" onclick="showPage('reviews')">Read All Reviews</button>
         </div>
 
     </div>
@@ -311,7 +320,7 @@
             <div class="review-stats">
                 <div class="stars">★★★★★</div>
                 <div class="stats-text">159 Positive Sales Transactions</div>
-                <div class="stats-sub">Consistently maintained stellar reputation career history</div>
+                <div class="stats-sub">Consistently maintaining a stellar reputation</div>
             </div>
 
             <div class="review-card">
@@ -445,24 +454,32 @@
 
 
     <script>
-        function showPage(pageName) {
+        function showPage(pageTarget) {
             const homeView = document.getElementById('home-view');
             const reviewsView = document.getElementById('reviews-view');
             const navHome = document.getElementById('nav-home');
             const navReviews = document.getElementById('nav-reviews');
 
-            if (pageName === 'home') {
+            if (pageTarget === 'home') {
                 homeView.classList.add('active-view');
                 reviewsView.classList.remove('active-view');
                 navHome.classList.add('active');
                 navReviews.classList.remove('active');
-            } else if (pageName === 'reviews-page') {
+            } else if (pageTarget === 'reviews') {
                 homeView.classList.remove('active-view');
                 reviewsView.classList.add('active-view');
                 navHome.classList.remove('active');
                 navReviews.classList.add('active');
             }
-            window.scrollTo(0,0);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function scrollToPlatforms(event) {
+            event.preventDefault();
+            const targetElement = document.getElementById('platforms-box');
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
         }
     </script>
 
