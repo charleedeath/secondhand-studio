@@ -68,7 +68,6 @@
             font-size: 1.2rem;
             color: #525749;
         }
-        /* Hidden badge for later when items are added */
         .cart-count {
             position: absolute;
             top: -5px;
@@ -80,7 +79,7 @@
             font-weight: bold;
             padding: 2px 6px;
             border-radius: 10px;
-            display: none; /* Change to 'block' later when cart has items */
+            display: none;
         }
 
         header {
@@ -296,8 +295,10 @@
 </head>
 <body>
 
+    <!-- Fixed Shopping Cart (Stays in corner) -->
     <div class="cart-container" id="cart-btn" onclick="alert('Your cart is currently empty. Shop drops coming soon!')">
-        <span class="cart-icon">&#128722;</span> <span class="cart-count" id="cart-counter">0</span>
+        <span class="cart-icon">&#128722;</span> <!-- Unicode Cart Symbol -->
+        <span class="cart-count" id="cart-counter">0</span>
     </div>
 
     <nav>
@@ -496,4 +497,4 @@
             const homeView = document.getElementById('home-view');
             const reviewsView = document.getElementById('reviews-view');
             const navHome = document.getElementById('nav-home');
-            const navReviews = document.getEle
+            const navReviews = document.getElementById('nav-review
