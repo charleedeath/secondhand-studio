@@ -87,7 +87,7 @@
             margin-top: 10px;
         }
 
-        /* Logic for separating views */
+        /* Views handling system */
         .page-view {
             display: none; 
         }
@@ -95,7 +95,7 @@
             display: block; 
         }
 
-        /* Content Sections */
+        /* Content Blocks */
         .section-box {
             max-width: 500px;
             margin: 0 auto 30px auto;
@@ -105,8 +105,16 @@
             padding: 30px 24px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
         }
-        
-        /* Clean Text & Custom Typography Box for Coming Soon */
+        .section-box h2 {
+            font-size: 1.3rem;
+            font-weight: normal;
+            margin-bottom: 15px;
+            color: #525749;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        /* Typography layout matching your Vinted screenshot text */
         .drop-soon-box {
             max-width: 500px;
             margin: 0 auto 30px auto;
@@ -134,7 +142,6 @@
             padding: 0 5px;
         }
 
-        /* Direct Platform Action Button */
         .shop-btn {
             background-color: #525749; 
             color: #f6f5f0;
@@ -148,16 +155,7 @@
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
-        .section-box h2 {
-            font-size: 1.3rem;
-            font-weight: normal;
-            margin-bottom: 15px;
-            color: #525749;
-            text-align: center;
-            letter-spacing: 0.5px;
-        }
-
-        /* Platforms Grid */
+        /* Marketplace Platforms Grid */
         .platform-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -178,7 +176,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* Universal Review Elements */
+        /* Review Board Styling */
         .review-stats {
             text-align: center;
             margin-bottom: 25px;
@@ -234,6 +232,7 @@
             border: 1px solid #c2c1ba;
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             cursor: pointer;
+            width: 100%;
         }
 
         footer {
@@ -415,5 +414,57 @@
                 <p class="review-author">— @p_rebecca</p>
             </div>
 
-            <div class="review-card
-                
+            <div class="review-card">
+                <p class="review-text">"Super fast delivery and great communication, lovely seller thank you x"</p>
+                <p class="review-author">— @v_o_c</p>
+            </div>
+
+            <div class="review-card">
+                <p class="review-text">"Perfect condition, quick dispatch. Thank you :)"</p>
+                <p class="review-author">— @kels1602</p>
+            </div>
+
+            <div class="review-card">
+                <p class="review-text">"lovely and quick delivery which i needed for my sisters bday! thanks so much x"</p>
+                <p class="review-author">— @jodie_cherubini</p>
+            </div>
+
+            <div class="review-card">
+                <p class="review-text">"perfect, thank you x"</p>
+                <p class="review-author">— @madyyy080597</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+        &copy; 2026 SECONDHAND.STUDIO
+    </footer>
+
+
+    <script>
+        function showPage(pageName) {
+            const homeView = document.getElementById('home-view');
+            const reviewsView = document.getElementById('reviews-view');
+            const navHome = document.getElementById('nav-home');
+            const navReviews = document.getElementById('nav-reviews');
+
+            if (pageName === 'home') {
+                homeView.classList.add('active-view');
+                reviewsView.classList.remove('active-view');
+                navHome.classList.add('active');
+                navReviews.classList.remove('active');
+            } else if (pageName === 'reviews-page') {
+                homeView.classList.remove('active-view');
+                reviewsView.classList.add('active-view');
+                navHome.classList.remove('active');
+                navReviews.classList.add('active');
+            }
+            window.scrollTo(0,0);
+        }
+    </script>
+
+</body>
+</html>
