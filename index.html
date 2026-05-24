@@ -89,10 +89,10 @@
 
         /* Logic for separating home vs reviews page views */
         .page-view {
-            display: none; /* Hidden by default */
+            display: none; 
         }
         .page-view.active-view {
-            display: block; /* Shows only the active page */
+            display: block; 
         }
 
         /* Content Sections */
@@ -199,7 +199,6 @@
             font-weight: 600;
         }
 
-        /* Full Reviews Page View Adjustments */
         .view-all-btn {
             background-color: transparent;
             color: #525749;
@@ -278,7 +277,7 @@
                 <p class="review-author">— @erin040724</p>
             </div>
 
-            <button class="view-all-btn" onclick="showPage('reviews-page')">Read All 159 Reviews</button>
+            <button class="view-all-btn" onclick="showPage('reviews-page')">Read All Reviews</button>
         </div>
 
     </div>
@@ -306,6 +305,16 @@
             </div>
 
             <div class="review-card">
+                <p class="review-text">"perfect condition and fast shipping, thank you!! xx"</p>
+                <p class="review-author">— @abarnes_</p>
+            </div>
+
+            <div class="review-card">
+                <p class="review-text">"Great communication, fast shipping, lovely item x"</p>
+                <p class="review-author">— @annafitzyyy</p>
+            </div>
+
+            <div class="review-card">
                 <p class="review-text">"Great supplier to deal with, item exactly as described and packed very well"</p>
                 <p class="review-author">— @sami270615</p>
             </div>
@@ -316,65 +325,10 @@
             </div>
 
             <div class="review-card">
-                <p class="review-text">"perfect xx"</p>
-                <p class="review-author">— @chloe_428</p>
+                <p class="review-text">"Lovely seller, quick response and delivery! Xx"</p>
+                <p class="review-author">— @_mali_</p>
             </div>
 
             <div class="review-card">
-                <p class="review-text">"Everything was great, as described, fast contact and shipping. I highly recommend it."</p>
-                <p class="review-author">— @marcint12</p>
-            </div>
 
-            <div class="review-card">
-                <p class="review-text">"lovely and quick delivery which i needed for my sisters bday! thanks so much x"</p>
-                <p class="review-author">— @jodie_cherubini</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"perfect, thank you x"</p>
-                <p class="review-author">— @madyyy080597</p>
-            </div>
-
-            </div>
-
-    </div>
-
-
-    <footer>
-        &copy; 2026 SECONDHAND.STUDIO
-    </footer>
-
-
-    <script>
-        function showPage(pageName) {
-            // Grab elements
-            const homeView = document.getElementById('home-view');
-            const reviewsView = document.getElementById('reviews-view');
-            const navHome = document.getElementById('nav-home');
-            const navReviews = document.getElementById('nav-reviews');
-
-            if (pageName === 'home') {
-                // Show home, hide review panel
-                homeView.classList.add('active-view');
-                reviewsView.classList.remove('active-view');
                 
-                // Highlight tabs
-                navHome.classList.add('active');
-                navReviews.classList.remove('active');
-            } else if (pageName === 'reviews-page') {
-                // Show review panel, hide home
-                homeView.classList.remove('active-view');
-                reviewsView.classList.add('active-view');
-                
-                // Highlight tabs
-                navHome.classList.remove('active');
-                navReviews.classList.add('active');
-            }
-            
-            // Instantly snap to top of new menu display
-            window.scrollTo(0,0);
-        }
-    </script>
-
-</body>
-</html>
