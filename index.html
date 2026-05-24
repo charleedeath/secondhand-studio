@@ -9,29 +9,54 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth; /* Smooth scrolling when clicking top navigation */
         }
         body {
-            background-color: #f6f5f0; /* Creamy off-white background matching the logo */
-            color: #2b2c28; /* Deep olive/charcoal text color */
-            font-family: "Georgia", serif; /* Elegant serif font to match the logo style */
-            padding: 20px;
+            background-color: #f6f5f0; 
+            color: #2b2c28; 
+            font-family: "Georgia", serif; 
+            padding: 0 20px 20px 20px;
         }
+        
+        /* Top Navigation Bar */
+        nav {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            border-bottom: 1px solid #e3e2dc;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #72756d;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: #2b2c28;
+        }
+
         header {
             text-align: center;
-            padding: 40px 20px 20px 20px;
+            padding: 50px 20px 30px 20px;
         }
         .logo-placeholder {
-            border: 2px solid #525749; /* Olive border matching the logo graphic */
+            border: 2px solid #525749; 
             border-radius: 50%;
             width: 220px;
             height: 140px;
             margin: 0 auto 15px auto;
-            background-color: #fcfbfa; /* Slightly brighter crisp center to isolate the logo */
+            background-color: #fcfbfa; 
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); /* Subtle separation from the background */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); 
         }
         .logo-text-top {
             font-size: 1.8rem;
@@ -59,37 +84,42 @@
             letter-spacing: 2px;
             margin-top: 10px;
         }
-        .catalog {
-            max-width: 450px;
-            margin: 20px auto 40px auto;
+
+        /* Unified Content Sections */
+        .section-box {
+            max-width: 500px;
+            margin: 0 auto 30px auto;
             background: #ffffff;
             border: 1px solid #e3e2dc;
             border-radius: 20px;
             padding: 30px 24px;
-            text-align: center;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
         }
-        .catalog h2 {
+        .section-box h2 {
             font-size: 1.3rem;
             font-weight: normal;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             color: #525749;
+            text-align: center;
+            letter-spacing: 0.5px;
         }
-        .catalog p {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+        /* Shop Section Styling */
+        #shop p {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             color: #72756d;
             font-size: 0.95rem;
             line-height: 1.6;
+            text-align: center;
+            margin-bottom: 20px;
         }
         .links-container {
-            max-width: 400px;
-            margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 12px;
         }
         .shop-btn {
-            background-color: #525749; /* Deep signature tone button */
+            background-color: #525749; 
             color: #f6f5f0;
             text-decoration: none;
             padding: 16px;
@@ -98,27 +128,65 @@
             text-align: center;
             font-size: 1rem;
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            transition: 0.2s ease;
         }
-        .social-btn {
-            background-color: transparent;
-            color: #525749;
-            text-decoration: none;
-            padding: 16px;
-            border-radius: 40px;
-            font-weight: 500;
+
+        /* Platforms / Authenticity Section */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
             text-align: center;
-            font-size: 1rem;
+            margin-top: 15px;
+        }
+        .platform-card {
+            background: #fbfbfa;
+            border: 1px solid #eaeae5;
+            padding: 12px 5px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #525749;
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            border: 1px solid #c2c1ba;
-            transition: 0.2s ease;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
-        .shop-btn:active {
-            background-color: #3b3e34;
+
+        /* Reviews Section Styling */
+        .review-stats {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
         }
-        .social-btn:active {
-            background-color: rgba(82, 87, 73, 0.05);
+        .stars {
+            color: #b5945b; /* Elegant gold/bronze star color */
+            font-size: 1.2rem;
+            margin-bottom: 4px;
         }
+        .stats-text {
+            font-size: 0.9rem;
+            color: #2b2c28;
+            font-weight: 600;
+        }
+        .review-card {
+            border-top: 1px solid #f0efe9;
+            padding: 15px 0 5px 0;
+            margin-top: 15px;
+        }
+        .review-text {
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #3b3e34;
+            margin-bottom: 6px;
+        }
+        .review-author {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #92958d;
+        }
+
         footer {
             text-align: center;
             margin-top: 60px;
@@ -131,6 +199,12 @@
 </head>
 <body>
 
+    <nav>
+        <a href="#shop">Shop</a>
+        <a href="#platforms">Our Stores</a>
+        <a href="#reviews">Reviews</a>
+    </nav>
+
     <header>
         <div class="logo-placeholder">
             <span class="logo-text-top">Secondhand</span>
@@ -140,15 +214,40 @@
         <p>curated sustainable fashion</p>
     </header>
 
-    <div class="catalog">
+    <div class="section-box" id="shop">
         <h2>Drop 01: Coming Soon</h2>
-        <p>Premium vintage garments & modern wardrobe essentials are being sourced. Sign up or follow our socials for exclusive access to the initial collection release.</p>
+        <p>Premium vintage garments & modern wardrobe essentials are being sourced. View our current collections across our digital storefronts below.</p>
+        <div class="links-container">
+            <a href="#" class="shop-btn">Browse Shop</a>
+        </div>
     </div>
 
-    <div class="links-container">
-        <a href="#" class="shop-btn">Shop the Collection</a>
-        <a href="https://instagram.com" class="social-btn">Follow Instagram</a>
-        <a href="#" class="social-btn">Contact Studio</a>
+    <div class="section-box" id="platforms">
+        <h2>Find Us On</h2>
+        <div class="platform-grid">
+            <a href="https://vinted.co.uk" target="_blank" class="platform-card">Vinted</a>
+            <a href="https://depop.com" target="_blank" class="platform-card">Depop</a>
+            <a href="https://ebay.co.uk" target="_blank" class="platform-card">eBay</a>
+        </div>
+    </div>
+
+    <div class="section-box" id="reviews">
+        <h2>Customer Feedback</h2>
+        
+        <div class="review-stats">
+            <div class="stars">★★★★★</div>
+            <div class="stats-text">150+ Perfect Reviews on Vinted</div>
+        </div>
+
+        <div class="review-card">
+            <p class="review-text">"Absolutely love the jacket, exactly as described and lightning fast shipping! Thank you x"</p>
+            <p class="review-author">— Verified Vinted Buyer</p>
+        </div>
+
+        <div class="review-card">
+            <p class="review-text">"Item arrived beautifully packaged. Amazing communication, genuine 5-star seller."</p>
+            <p class="review-author">— Verified Depop Buyer</p>
+        </div>
     </div>
 
     <footer>
