@@ -87,6 +87,14 @@
             margin-top: 10px;
         }
 
+        /* Views handling system */
+        .page-view {
+            display: none; 
+        }
+        .page-view.active-view {
+            display: block; 
+        }
+
         /* Content Blocks */
         .section-box {
             max-width: 500px;
@@ -106,6 +114,7 @@
             letter-spacing: 0.5px;
         }
 
+        /* Typography layout matching your Vinted screenshot text */
         .drop-soon-box {
             max-width: 500px;
             margin: 0 auto 30px auto;
@@ -248,8 +257,8 @@
 <body>
 
     <nav>
-        <a id="nav-home" class="active" onclick="switchToSection('shop')">Shop</a>
-        <a id="nav-reviews" onclick="switchToSection('reviews')">Reviews</a>
+        <a id="nav-home" class="active" onclick="showPage('home')">Shop</a>
+        <a id="nav-reviews" onclick="showPage('reviews')">Reviews</a>
     </nav>
 
     <header>
@@ -262,13 +271,12 @@
     </header>
 
 
-    <!-- SHOP MAIN CONTAINER -->
-    <div id="section-shop-view" style="display: block;">
+    <div id="home-view" class="page-view active-view">
         
         <div class="drop-soon-box">
             <h2>drop 01 coming soon...</h2>
             <p>premium vintage and modern streetwear pieces. shipping within 1-2 days. tracked courier delivery.</p>
-            <a onclick="smoothScrollToPlatforms(event)" class="shop-btn">View Our Marketplaces</a>
+            <a onclick="scrollToPlatforms(event)" class="shop-btn">View Our Marketplaces</a>
         </div>
 
         <div class="section-box" id="platforms-box">
@@ -285,7 +293,7 @@
             <div class="review-stats">
                 <div class="stars">★★★★★</div>
                 <div class="stats-text">4.9 / 5.0 Rating</div>
-                <div class="stats-sub">Based on 176 sales history</div>
+                <div class="stats-sub">Based on 159 sales history</div>
             </div>
 
             <div class="review-card">
@@ -298,116 +306,23 @@
                 <p class="review-author">— @erin040724</p>
             </div>
 
-            <button class="view-all-btn" onclick="switchToSection('reviews')">Read All Reviews</button>
+            <button class="view-all-btn" onclick="showPage('reviews')">Read All Reviews</button>
         </div>
 
     </div>
 
 
-    <!-- REVIEWS COMPLETE CONTAINER -->
-    <div id="section-reviews-view" style="display: none;">
+    <div id="reviews-view" class="page-view">
         
         <div class="section-box">
             <h2>Complete Review Wall</h2>
             
             <div class="review-stats">
                 <div class="stars">★★★★★</div>
-                <div class="stats-text">176 Positive Sales Transactions</div>
+                <div class="stats-text">159 Positive Sales Transactions</div>
                 <div class="stats-sub">Consistently maintaining a stellar reputation</div>
             </div>
 
-            <!-- New Reviews -->
-            <div class="review-card">
-                <p class="review-text">"Amazing 🤩"</p>
-                <p class="review-author">— @isabella_grifffin</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"very kind, replied fast good seller"</p>
-                <p class="review-author">— @Starkvty</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Perfect thankyou x"</p>
-                <p class="review-author">— @Pinkrose65</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"good quality and everything fits as described"</p>
-                <p class="review-author">— @No_0ne07</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Everything was great, as described, fast contact and shipping. I highly recommend it."</p>
-                <p class="review-author">— @Marcint12</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Excellent seller bandana came in really good condition. Carefully sent thanks!"</p>
-                <p class="review-author">— @Eliza.essen</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Came in good condition and the seller was really lovely"</p>
-                <p class="review-author">— @beansontoast2000</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Quick and easy. Would recommend"</p>
-                <p class="review-author">— @yevaknott</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Better delivery time than Amazon! Thanks so much"</p>
-                <p class="review-author">— @stormsski</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Arrived today, I love it. Great seller"</p>
-                <p class="review-author">— @t3ddi3</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Thank you. Wonderful winter themed packaging too such a nice touch"</p>
-                <p class="review-author">— @babika2312</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"literally posted the same day and came in such cute packaging!"</p>
-                <p class="review-author">— @Deleted member</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Amazing seller - everything arrived in perfect condition"</p>
-                <p class="review-author">— @adibdin</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"The item was perfect!!!"</p>
-                <p class="review-author">— @smegasaurs</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Love the packaging. Amazing condition."</p>
-                <p class="review-author">— @airupcola</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"Perfect thank you!! Xx"</p>
-                <p class="review-author">— @lucyleebank</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"lightning fast delivery and great item thanks"</p>
-                <p class="review-author">— @67pantsy</p>
-            </div>
-
-            <div class="review-card">
-                <p class="review-text">"love it fits perfectly thanks"</p>
-                <p class="review-author">— @alexford039</p>
-            </div>
-
-            <!-- Older Reviews -->
             <div class="review-card">
                 <p class="review-text">"Brilliant seller, excellent communication, super fast delivery and item exactly as described ... thank you x"</p>
                 <p class="review-author">— @shellllouise1976</p>
@@ -499,6 +414,11 @@
             </div>
 
             <div class="review-card">
+                <p class="review-text">"Everything was great, as described, fast contact and shipping. I highly recommend it."</p>
+                <p class="review-author">— @marcint12</p>
+            </div>
+
+            <div class="review-card">
                 <p class="review-text">"lovely item, super fast delivery, thank you!"</p>
                 <p class="review-author">— @p_rebecca</p>
             </div>
@@ -534,19 +454,34 @@
 
 
     <script>
-        // Explicit layout display override engine to ensure zero-clash seamless switching
-        function switchToSection(targetSection) {
-            const shopContainer = document.getElementById('section-shop-view');
-            const reviewsContainer = document.getElementById('section-reviews-view');
-            const navShopButton = document.getElementById('nav-home');
-            const navReviewsButton = document.getElementById('nav-reviews');
+        function showPage(pageTarget) {
+            const homeView = document.getElementById('home-view');
+            const reviewsView = document.getElementById('reviews-view');
+            const navHome = document.getElementById('nav-home');
+            const navReviews = document.getElementById('nav-reviews');
 
-            if (targetSection === 'shop') {
-                shopContainer.style.display = 'block';
-                reviewsContainer.style.display = 'none';
-                navShopButton.classList.add('active');
-                navReviewsButton.classList.remove('active');
-            } else if (targetSection === 'reviews') {
-                shopContainer.style.display = 'none';
-                reviewsContainer.style.display = 'block';
-                navShopButton.cl
+            if (pageTarget === 'home') {
+                homeView.classList.add('active-view');
+                reviewsView.classList.remove('active-view');
+                navHome.classList.add('active');
+                navReviews.classList.remove('active');
+            } else if (pageTarget === 'reviews') {
+                homeView.classList.remove('active-view');
+                reviewsView.classList.add('active-view');
+                navHome.classList.remove('active');
+                navReviews.classList.add('active');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function scrollToPlatforms(event) {
+            event.preventDefault();
+            const targetElement = document.getElementById('platforms-box');
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+
+</body>
+</html>
