@@ -111,21 +111,22 @@
             display: block; 
         }
 
-        /* Shopping Cart Modal Backdrop */
+        /* FIXED: Heavy Duty Shopping Cart Modal Backdrop overriding all positioning elements */
         .cart-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(2px);
-            z-index: 1000;
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            background-color: rgba(0, 0, 0, 0.4) !important;
+            z-index: 999999 !important; /* Forces it over absolutely everything */
             display: none;
             justify-content: flex-end;
         }
         .cart-overlay.active {
-            display: flex;
+            display: flex !important;
         }
 
         /* Slide-out Cart Panel */
@@ -134,16 +135,12 @@
             width: 100%;
             max-width: 400px;
             height: 100%;
-            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.05);
+            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
             padding: 30px 24px;
             display: flex;
             flex-direction: column;
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            animation: slideIn 0.3s ease-out;
-        }
-        @keyframes slideIn {
-            from { transform: translateX(100%); }
-            to { transform: translateX(0); }
+            position: relative;
         }
         .cart-header {
             display: flex;
@@ -162,9 +159,10 @@
         .close-cart-btn {
             background: none;
             border: none;
-            font-size: 1.5rem;
+            font-size: 2rem;
             color: #72756d;
             cursor: pointer;
+            line-height: 1;
         }
         .close-cart-btn:hover {
             color: #2b2c28;
@@ -490,4 +488,4 @@
             <div class="review-card"><p class="review-text">"Packed so well and such a kind person! Didn’t have any issues whatsoever :)"</p><p class="review-author">— @erin040724</p></div>
             <div class="review-card"><p class="review-text">"perfect condition and fast shipping, thank you!! xx"</p><p class="review-author">— @abarnes_</p></div>
             <div class="review-card"><p class="review-text">"Great communication, fast shipping, lovely item x"</p><p class="review-author">— @annafitzyyy</p></div>
-            <div class="review-card"><p class="review-text">"Great supplier to deal with, item exactly as described and packed very well"</p><p class="review-author">— @sami2706
+            <div class="review-card"><p class="review-text">"Great supplier to deal 
