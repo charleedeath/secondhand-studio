@@ -24,12 +24,14 @@
             padding: 20px 0;
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 35px;
             border-bottom: 1px solid #e3e2dc;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             text-transform: uppercase;
             font-size: 0.8rem;
             letter-spacing: 1.5px;
+            position: relative;
         }
         nav a {
             text-decoration: none;
@@ -41,6 +43,36 @@
         nav a:hover, nav a.active {
             color: #2b2c28;
             font-weight: 600;
+        }
+
+        /* Cart Icon Nav Styling */
+        .cart-nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: none;
+            border: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            font-family: inherit;
+            color: #72756d;
+            cursor: pointer;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        .cart-nav-btn:hover {
+            color: #2b2c28;
+        }
+        .cart-count {
+            background-color: #525749;
+            color: #f6f5f0;
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 10px;
+            min-width: 18px;
+            text-align: center;
         }
 
         header {
@@ -93,6 +125,103 @@
         }
         .page-view.active-view {
             display: block; 
+        }
+
+        /* Shopping Cart Modal Backdrop */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(2px);
+            z-index: 1000;
+            display: none;
+            justify-content: flex-end;
+        }
+        .cart-overlay.active {
+            display: flex;
+        }
+
+        /* Slide-out Cart Panel */
+        .cart-panel {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.05);
+            padding: 30px 24px;
+            display: flex;
+            flex-direction: column;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            animation: slideIn 0.3s ease-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e3e2dc;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .cart-header h2 {
+            font-family: "Georgia", serif;
+            font-size: 1.4rem;
+            font-weight: normal;
+            color: #2b2c28;
+        }
+        .close-cart-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #72756d;
+            cursor: pointer;
+        }
+        .close-cart-btn:hover {
+            color: #2b2c28;
+        }
+        .cart-items-container {
+            flex-grow: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #72756d;
+        }
+        .empty-cart-msg {
+            text-align: center;
+            font-style: italic;
+            font-family: "Georgia", serif;
+        }
+        .cart-footer {
+            border-top: 1px solid #e3e2dc;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+        .cart-total-row {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2b2c28;
+        }
+        .checkout-btn {
+            background-color: #525749; 
+            color: #f6f5f0;
+            border: none;
+            width: 100%;
+            padding: 15px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: not-allowed;
+            opacity: 0.6;
         }
 
         /* Content Blocks */
@@ -259,7 +388,32 @@
     <nav>
         <a id="nav-home" class="active" onclick="showPage('home')">Shop</a>
         <a id="nav-reviews" onclick="showPage('reviews')">Reviews</a>
+        <button class="cart-nav-btn" onclick="toggleCart(true)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            Cart <span class="cart-count" id="cart-counter">0</span>
+        </button>
     </nav>
+
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart(false)">
+        <div class="cart-panel" onclick="event.stopPropagation()">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-cart-btn" onclick="toggleCart(false)">&times;</button>
+            </div>
+            
+            <div class="cart-items-container">
+                <p class="empty-cart-msg">Your cart is currently empty.</p>
+            </div>
+
+            <div class="cart-footer">
+                <div class="cart-total-row">
+                    <span>Subtotal</span>
+                    <span>£0.00</span>
+                </div>
+                <button class="checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
 
     <header>
         <div class="logo-placeholder">
@@ -350,57 +504,4 @@
             <div class="review-card"><p class="review-text">"Fab seller, super fast shipping! Thank you x"</p><p class="review-author">— @kieralouise_</p></div>
             <div class="review-card"><p class="review-text">"Very beautiful thank you very much! Great communication A+++++ seller"</p><p class="review-author">— @monang23</p></div>
             <div class="review-card"><p class="review-text">"Packed so well and such a kind person! Didn’t have any issues whatsoever :)"</p><p class="review-author">— @erin040724</p></div>
-            <div class="review-card"><p class="review-text">"perfect condition and fast shipping, thank you!! xx"</p><p class="review-author">— @abarnes_</p></div>
-            <div class="review-card"><p class="review-text">"Great communication, fast shipping, lovely item x"</p><p class="review-author">— @annafitzyyy</p></div>
-            <div class="review-card"><p class="review-text">"Great supplier to deal with, item exactly as described and packed very well"</p><p class="review-author">— @sami270615</p></div>
-            <div class="review-card"><p class="review-text">"Lovely item, friendly communication and prompt delivery. Happy with my purchase. Many thanks x"</p><p class="review-author">— @vladarya1102</p></div>
-            <div class="review-card"><p class="review-text">"Lovely seller, quick response and delivery! Xx"</p><p class="review-author">— @_mali_</p></div>
-            <div class="review-card"><p class="review-text">"Item exactly as described. Shipped super fast! Thank you :)"</p><p class="review-author">— @georgia_t_</p></div>
-            <div class="review-card"><p class="review-text">"perfect xx"</p><p class="review-author">— @chloe_428</p></div>
-            <div class="review-card"><p class="review-text">"Everything was great, as described, fast contact and shipping. I highly recommend it."</p><p class="review-author">— @marcint12</p></div>
-            <div class="review-card"><p class="review-text">"lovely item, super fast delivery, thank you!"</p><p class="review-author">— @p_rebecca</p></div>
-            <div class="review-card"><p class="review-text">"Super fast delivery and great communication, lovely seller thank you x"</p><p class="review-author">— @v_o_c</p></div>
-            <div class="review-card"><p class="review-text">"Perfect condition, quick dispatch. Thank you :)"</p><p class="review-author">— @kels1602</p></div>
-            <div class="review-card"><p class="review-text">"lovely and quick delivery which i needed for my sisters bday! thanks so much x"</p><p class="review-author">— @jodie_cherubini</p></div>
-            <div class="review-card"><p class="review-text">"perfect, thank you x"</p><p class="review-author">— @madyyy080597</p></div>
-
-        </div>
-
-    </div>
-
-    <footer>
-        &copy; 2026 SECONDHAND.STUDIO
-    </footer>
-
-    <script>
-        function showPage(pageTarget) {
-            const homeView = document.getElementById('home-view');
-            const reviewsView = document.getElementById('reviews-view');
-            const navHome = document.getElementById('nav-home');
-            const navReviews = document.getElementById('nav-reviews');
-
-            if (pageTarget === 'home') {
-                homeView.classList.add('active-view');
-                reviewsView.classList.remove('active-view');
-                navHome.classList.add('active');
-                navReviews.classList.remove('active');
-            } else if (pageTarget === 'reviews') {
-                homeView.classList.remove('active-view');
-                reviewsView.classList.add('active-view');
-                navHome.classList.remove('active');
-                navReviews.classList.add('active');
-            }
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function scrollToPlatforms(event) {
-            event.preventDefault();
-            const targetElement = document.getElementById('platforms-box');
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-    </script>
-
-</body>
-</html>
+            <div class="revie
