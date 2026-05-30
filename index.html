@@ -100,4 +100,243 @@
             animation: fadeIn 0.3s ease;
         }
 
-        .active
+        .active-view {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-box,
+        .drop-soon-box {
+            max-width: 500px;
+            margin: 0 auto 30px auto;
+            background: #fff;
+            border: 1px solid #e3e2dc;
+            border-radius: 20px;
+            padding: 30px 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        }
+
+        .drop-soon-box {
+            text-align: center;
+        }
+
+        .shop-btn {
+            background-color: #525749;
+            color: #f6f5f0;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 40px;
+            font-weight: 600;
+            display: block;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .shop-btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
+        }
+
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .platform-card {
+            background: #fbfbfa;
+            border: 1px solid #eaeae5;
+            padding: 12px 5px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #525749;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background 0.2s ease;
+        }
+
+        .platform-card:hover {
+            background: #f1f0ea;
+        }
+
+        .review-stats {
+            text-align: center;
+            margin-bottom: 25px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .stars {
+            color: #b5945b;
+            font-size: 1.3rem;
+        }
+
+        .stats-text {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .stats-sub {
+            font-size: 0.8rem;
+            color: #72756d;
+        }
+
+        .review-card {
+            border-top: 1px solid #f0efe9;
+            padding: 16px 0;
+        }
+
+        .review-text {
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .review-author {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #92958d;
+            margin-top: 5px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #a2a19b;
+            font-size: 0.8rem;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a id="nav-home" class="active" onclick="showPage('home')">Shop</a>
+    <a id="nav-reviews" onclick="showPage('reviews')">Reviews</a>
+</nav>
+
+<header>
+    <div class="logo-placeholder">
+        <span class="logo-text-top">Secondhand</span>
+        <div class="divider"></div>
+        <span class="logo-text-bottom">Studio</span>
+    </div>
+    <p>curated sustainable fashion</p>
+</header>
+
+<!-- HOME -->
+<div id="home-view" class="page-view active-view">
+
+    <div class="drop-soon-box">
+        <h2>drop 01 coming soon...</h2>
+        <p>premium vintage and modern streetwear pieces.</p>
+        <a class="shop-btn" onclick="scrollToPlatforms()">View Our Marketplaces</a>
+    </div>
+
+    <div class="section-box" id="platforms">
+        <h2>Our Trusted Stores</h2>
+        <div class="platform-grid">
+            <a class="platform-card" target="_blank" rel="noopener noreferrer" href="https://www.vinted.co.uk/member/143741341-threadandedit">Vinted</a>
+            <a class="platform-card" target="_blank" rel="noopener noreferrer" href="https://www.depop.com/shopsecondhandstudio">Depop</a>
+            <a class="platform-card" target="_blank" rel="noopener noreferrer" href="https://ebay.us/m/vyA3D9">eBay</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- REVIEWS -->
+<div id="reviews-view" class="page-view">
+
+    <div class="section-box">
+        <h2>Complete Review Wall</h2>
+
+        <div class="review-stats">
+            <div class="stars">★★★★★</div>
+            <div class="stats-text">159 Positive Sales Transactions</div>
+            <div class="stats-sub">Consistently strong feedback</div>
+        </div>
+
+        <div id="reviews-container"></div>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2026 SECONDHAND.STUDIO
+</footer>
+
+<script>
+    const reviews = [
+        { text: "Amazing 🤩", author: "@isabella_grifffin" },
+        { text: "very kind, replied fast good seller", author: "@Starkvty" },
+        { text: "Perfect thankyou x", author: "@Pinkrose65" },
+        { text: "good quality and everything fits as described", author: "@No_0ne07" },
+        { text: "Everything was great, fast contact and shipping.", author: "@Marcint12" },
+        { text: "Excellent seller, item in great condition.", author: "@Eliza.essen" },
+        { text: "Came in good condition and lovely seller", author: "@beansontoast2000" },
+        { text: "Quick and easy. Would recommend", author: "@yevaknott" },
+        { text: "Better delivery time than Amazon!", author: "@stormsski" },
+        { text: "Arrived today, I love it.", author: "@t3ddi3" },
+        { text: "Wonderful packaging, thank you", author: "@babika2312" },
+        { text: "Amazing seller", author: "@adibdin" },
+        { text: "The item was perfect!!!", author: "@smegasaurs" },
+        { text: "Love the packaging.", author: "@airupcola" },
+        { text: "Perfect thank you!!", author: "@lucyleebank" },
+        { text: "lightning fast delivery", author: "@67pantsy" },
+        { text: "love it fits perfectly", author: "@alexford039" },
+        { text: "Brilliant seller, fast delivery", author: "@shellllouise1976" },
+        { text: "Lovely soft jumper", author: "@velvety-style" },
+        { text: "very helpful seller", author: "@krlkkma" }
+    ];
+
+    function renderReviews() {
+        const container = document.getElementById("reviews-container");
+        container.innerHTML = "";
+
+        reviews.forEach(r => {
+            container.innerHTML += `
+                <div class="review-card">
+                    <div class="review-text">"${r.text}"</div>
+                    <div class="review-author">— ${r.author}</div>
+                </div>
+            `;
+        });
+    }
+
+    function showPage(page) {
+        document.getElementById("home-view").classList.remove("active-view");
+        document.getElementById("reviews-view").classList.remove("active-view");
+
+        document.getElementById("nav-home").classList.remove("active");
+        document.getElementById("nav-reviews").classList.remove("active");
+
+        if (page === "home") {
+            document.getElementById("home-view").classList.add("active-view");
+            document.getElementById("nav-home").classList.add("active");
+        } else {
+            document.getElementById("reviews-view").classList.add("active-view");
+            document.getElementById("nav-reviews").classList.add("active");
+            renderReviews();
+        }
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function scrollToPlatforms() {
+        document.getElementById("platforms").scrollIntoView({ behavior: "smooth" });
+    }
+
+    renderReviews();
+</script>
+
+</body>
+</html>
