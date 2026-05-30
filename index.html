@@ -88,7 +88,7 @@
             margin-top: 10px;
         }
 
-        /* Views handling system */
+        /* View Switching Logic */
         .page-view {
             display: none; 
         }
@@ -96,7 +96,7 @@
             display: block; 
         }
 
-        /* Content Blocks */
+        /* Layout Cards */
         .section-box {
             max-width: 500px;
             margin: 0 auto 30px auto;
@@ -115,7 +115,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* Typography layout matching Vinted screenshot text */
         .drop-soon-box {
             max-width: 500px;
             margin: 0 auto 30px auto;
@@ -157,7 +156,54 @@
             cursor: pointer;
         }
 
-        /* Marketplace Platforms Grid */
+        .preview-store-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        .preview-item-box {
+            background: #fbfbfa;
+            border: 1px solid #eaeae5;
+            border-radius: 12px;
+            padding: 12px;
+            text-align: left;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        .preview-item-img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background-color: #eaeae5;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #72756d;
+            margin-bottom: 8px;
+        }
+        .preview-item-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #2b2c28;
+        }
+        .preview-item-price {
+            font-size: 0.85rem;
+            color: #525749;
+            margin: 2px 0 8px 0;
+        }
+        .add-to-cart-trigger {
+            width: 100%;
+            background-color: #525749;
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
         .platform-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -182,7 +228,7 @@
             background: #f1f0ea;
         }
 
-        /* Review Board Styling */
+        /* Reviews Wall Display */
         .review-stats {
             text-align: center;
             margin-bottom: 25px;
@@ -245,56 +291,7 @@
             background-color: rgba(82, 87, 73, 0.05);
         }
 
-        /* Optional preview items layout to test add-to-cart */
-        .preview-store-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 25px;
-        }
-        .preview-item-box {
-            background: #fbfbfa;
-            border: 1px solid #eaeae5;
-            border-radius: 12px;
-            padding: 12px;
-            text-align: left;
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-        .preview-item-img {
-            width: 100%;
-            aspect-ratio: 1/1;
-            background-color: #eaeae5;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            color: #72756d;
-            margin-bottom: 8px;
-        }
-        .preview-item-name {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #2b2c28;
-        }
-        .preview-item-price {
-            font-size: 0.85rem;
-            color: #525749;
-            margin: 2px 0 8px 0;
-        }
-        .add-to-cart-trigger {
-            width: 100%;
-            background-color: #525749;
-            color: white;
-            border: none;
-            padding: 8px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        /* SIDEBAR CART COMPONENT */
+        /* Cart UI Overlay Drawer */
         .side-cart-panel {
             position: fixed;
             top: 0;
@@ -436,11 +433,11 @@
 </head>
 <body>
 
-    <!-- NAVBAR LINKS -->
+    <!-- STABLE NAVIGATION SYSTEM COMPATIBLE WITH GITHUB PAGES -->
     <nav>
-        <a id="nav-home" class="active" href="javascript:void(0)" onclick="showPage('home')">Shop</a>
-        <a id="nav-reviews" href="javascript:void(0)" onclick="showPage('reviews')">Reviews</a>
-        <a id="nav-cart-btn" href="javascript:void(0)" onclick="toggleCartDisplay(true)">Cart (<span id="cart-pill-count">0</span>)</a>
+        <a id="nav-home" class="active" onclick="switchToTab('home')">Shop</a>
+        <a id="nav-reviews" onclick="switchToTab('reviews')">Reviews</a>
+        <a id="nav-cart-btn" onclick="toggleCartDisplay(true)">Cart (<span id="cart-pill-count">0</span>)</a>
     </nav>
 
     <header>
@@ -452,15 +449,13 @@
         <p>curated sustainable fashion</p>
     </header>
 
-    <!-- SHOP / HOME VIEW -->
+    <!-- SHOPPING MODULE VIEW -->
     <div id="home-view" class="page-view active-view">
-        
         <div class="drop-soon-box">
             <h2>drop 01 coming soon...</h2>
             <p>premium vintage and modern streetwear pieces. shipping within 1-2 days. tracked courier delivery.</p>
             <a href="#platforms-box" onclick="scrollToPlatforms(event)" class="shop-btn">View Our Marketplaces</a>
 
-            <!-- Sample store items -->
             <div class="preview-store-grid">
                 <div class="preview-item-box">
                     <div class="preview-item-img">Item Photo</div>
@@ -493,28 +488,22 @@
                 <div class="stats-text">4.9 / 5.0 Rating</div>
                 <div class="stats-sub">Based on 159 sales history</div>
             </div>
-
             <div class="review-card">
                 <p class="review-text">"Very beautiful thank you very much! Great communication A+++++ seller"</p>
                 <p class="review-author">— @monang23</p>
             </div>
-
             <div class="review-card">
                 <p class="review-text">"Packed so well and such a kind person! Didn’t have any issues whatsoever :)"</p>
                 <p class="review-author">— @erin040724</p>
             </div>
-
-            <button class="view-all-btn" onclick="showPage('reviews')">Read All Reviews</button>
+            <button class="view-all-btn" onclick="switchToTab('reviews')">Read All Reviews</button>
         </div>
-
     </div>
 
-    <!-- REVIEWS VIEW -->
+    <!-- REVIEWS ENGINE VIEW -->
     <div id="reviews-view" class="page-view">
-        
         <div class="section-box">
             <h2>Complete Review Wall</h2>
-            
             <div class="review-stats">
                 <div class="stars">★★★★★</div>
                 <div class="stats-text">159 Positive Sales Transactions</div>
@@ -532,7 +521,7 @@
             <div class="review-card"><p class="review-text">"Better delivery time than Amazon! Thanks so much"</p><p class="review-author">— @stormsski</p></div>
             <div class="review-card"><p class="review-text">"Arrived today, I love it. Great seller"</p><p class="review-author">— @t3ddi3</p></div>
             <div class="review-card"><p class="review-text">"Thank you. Wonderful winter themed packaging too such a nice touch"</p><p class="review-author">— @babika2312</p></div>
-            <div class="review-card"><p class="review-text">"literally posted the same day and came in such cute packaging!"</p><p class="review-author">— @Deleted member</p></div>
+            <div class="review-card"><p class="review-text">"literally posted the same day and came in such cute packaging!"</p><p class="review-author">— @Deleted_member</p></div>
             <div class="review-card"><p class="review-text">"Amazing seller - everything arrived in perfect condition"</p><p class="review-author">— @adibdin</p></div>
             <div class="review-card"><p class="review-text">"The item was perfect!!!"</p><p class="review-author">— @smegasaurs</p></div>
             <div class="review-card"><p class="review-text">"Love the packaging. Amazing condition."</p><p class="review-author">— @airupcola</p></div>
@@ -540,8 +529,7 @@
             <div class="review-card"><p class="review-text">"lightning fast delivery and great item thanks"</p><p class="review-author">— @67pantsy</p></div>
             <div class="review-card"><p class="review-text">"love it fits perfectly thanks"</p><p class="review-author">— @alexford039</p></div>
             <div class="review-card"><p class="review-text">"Brilliant seller, excellent communication, super fast delivery and item exactly as described ... thank you x"</p><p class="review-author">— @shellllouise1976</p></div>
-            
-            <!-- FIXED SINGLE QUOTE APOSTROPHE HERE -->
             <div class="review-card"><p class="review-text">"Good Seller- lovely luxuriously soft fluffy jumper - sadly too small for me but I’ll give to someone in the family - thank you x"</p><p class="review-author">— @velvety-style</p></div>
-            
-            <div class="review-card"><p class="review-text">"very helpful and kind seller, very communicative, fast shipping and cute to
+            <div class="review-card"><p class="review-text">"very helpful and kind seller, very communicative, fast shipping and cute top!!"</p><p class="review-author">— @krlkkma</p></div>
+            <div class="review-card"><p class="review-text">"lovely item thank you xx"</p><p class="review-author">— @_emilyy_jones_</p></div>
+            <div class="review-card"><p class="review-text">"Highly recommend, fast postage and items perfectly described"</p><p class="review-author
