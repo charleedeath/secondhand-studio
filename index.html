@@ -17,7 +17,6 @@
             padding: 0 20px 80px 20px;
         }
         
-        /* Top Navigation Bar */
         nav {
             max-width: 600px;
             margin: 0 auto;
@@ -87,7 +86,6 @@
             margin-top: 10px;
         }
 
-        /* Content Blocks */
         .section-box {
             max-width: 500px;
             margin: 0 auto 30px auto;
@@ -149,7 +147,6 @@
             width: 100%;
         }
 
-        /* Floating Shopping Cart & Checkout Button */
         .cart-footer-bar {
             position: fixed;
             bottom: 0;
@@ -196,7 +193,6 @@
             cursor: pointer;
         }
 
-        /* Marketplace Platforms Grid */
         .platform-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -221,7 +217,6 @@
             background: #f1f0ea;
         }
 
-        /* Review Board Styling */
         .review-stats {
             text-align: center;
             margin-bottom: 25px;
@@ -265,5 +260,130 @@
 
         .view-all-btn {
             background-color: transparent;
-            color:
-                
+            color: #525749;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-align: center;
+            display: block;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            border: 1px solid #c2c1ba;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            cursor: pointer;
+            width: 100%;
+        }
+        footer {
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            color: #92958d;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="active">Shop</a>
+        <a href="reviews.html">Reviews</a>
+    </nav>
+
+    <header>
+        <div class="logo-placeholder">
+            <span class="logo-text-top">Secondhand</span>
+            <div class="divider"></div>
+            <span class="logo-text-bottom">Studio</span>
+        </div>
+        <p>curated sustainable fashion</p>
+    </header>
+
+    <div>
+        <div class="drop-soon-box">
+            <h2>drop 01 coming soon...</h2>
+            <p>premium vintage and modern streetwear pieces. shipping within 1-2 days. tracked courier delivery.</p>
+            <button onclick="addTestItem()" class="shop-btn">Test The Cart Button</button>
+        </div>
+
+        <div class="section-box">
+            <h2>Our Trusted Stores</h2>
+            <div class="platform-grid">
+                <a href="https://www.vinted.co.uk/member/143741341-threadandedit" target="_blank" class="platform-card">Vinted</a>
+                <a href="https://www.depop.com/shopsecondhandstudio" target="_blank" class="platform-card">Depop</a>
+                <a href="https://ebay.us/m/vyA3D9" target="_blank" class="platform-card">eBay</a>
+            </div>
+        </div>
+
+        <div class="section-box">
+            <h2>Verified Feedback</h2>
+            <div class="review-stats">
+                <div class="stars">★★★★★</div>
+                <div class="stats-text">4.9 / 5.0 Rating</div>
+                <div class="stats-sub">Based on 159 sales history</div>
+            </div>
+
+            <div class="review-card">
+                <p class="review-text">"Very beautiful thank you very much! Great communication A+++++ seller"</p>
+                <p class="review-author">— @monang23</p>
+            </div>
+
+            <div class="review-card">
+                <p class="review-text">"Packed so well and such a kind person! Didn’t have any issues whatsoever :)"</p>
+                <p class="review-author">— @erin040724</p>
+            </div>
+
+            <a href="reviews.html" class="view-all-btn">Read All Reviews</a>
+        </div>
+    </div>
+
+    <div id="cartBar" class="cart-footer-bar">
+        <div class="cart-bar-container">
+            <div class="cart-info-text">
+                Cart (<span id="cartCount">0</span>) — Total: <strong id="cartTotal">£0.00</strong>
+            </div>
+            <button class="checkout-btn" onclick="handleCheckout()">Checkout</button>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 SECONDHAND.STUDIO
+    </footer>
+
+    <script>
+        let cart = [];
+
+        function addTestItem() {
+            cart.push({ name: 'Mystery Drop Item', price: 45.00 });
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartBar = document.getElementById('cartBar');
+            const cartCount = document.getElementById('cartCount');
+            const cartTotal = document.getElementById('cartTotal');
+            
+            let total = 0;
+            cart.forEach(item => total += item.price);
+            
+            cartCount.innerText = cart.length;
+            cartTotal.innerText = '£' + total.toFixed(2);
+            
+            if (cart.length > 0) {
+                cartBar.classList.add('show-cart');
+            } else {
+                cartBar.classList.remove('show-cart');
+            }
+        }
+
+        function handleCheckout() {
+            let total = 0;
+            cart.forEach(item => total += item.price);
+            alert("Checkout Triggered!\nTotal: £" + total.toFixed(2));
+            cart = [];
+            updateCartUI();
+        }
+    </script>
+</body>
+</html>
