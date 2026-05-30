@@ -14,7 +14,7 @@
             background-color: #f6f5f0; 
             color: #2b2c28; 
             font-family: "Georgia", serif; 
-            padding: 0 20px 80px 20px; /* Space for the bottom cart bar */
+            padding: 0 20px 80px 20px;
         }
         
         /* Top Navigation Bar */
@@ -87,12 +87,12 @@
             margin-top: 10px;
         }
 
-        /* Views handling system */
+        /* Crucial Navigation System Styles */
         .page-view {
-            display: none; 
+            display: none !important; 
         }
         .page-view.active-view {
-            display: block; 
+            display: block !important; 
         }
 
         /* Content Blocks */
@@ -287,6 +287,14 @@
             cursor: pointer;
             width: 100%;
         }
+        footer {
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            color: #92958d;
+            margin-top: 50px;
+        }
     </style>
 </head>
 <body>
@@ -305,6 +313,7 @@
         <p>curated sustainable fashion</p>
     </header>
 
+    <!-- SHOP / HOME VIEW -->
     <div id="home-view" class="page-view active-view">
         
         <div class="drop-soon-box">
@@ -345,7 +354,7 @@
 
     </div>
 
-    <!-- COMPLETE REVIEW WALL RESTORED -->
+    <!-- FULL REVIEW WALL VIEW -->
     <div id="reviews-view" class="page-view">
         
         <div class="section-box">
@@ -404,7 +413,7 @@
 
     </div>
 
-    <!-- Hidden Cart Bar at bottom -->
+    <!-- Floating Shopping Cart & Checkout Bar -->
     <div id="cartBar" class="cart-footer-bar">
         <div class="cart-bar-container">
             <div class="cart-info-text">
@@ -446,11 +455,4 @@
 
         function handleCheckout() {
             let total = 0;
-            cart.forEach(item => total += item.price);
-            alert("Checkout Triggered!\nTotal: £" + total.toFixed(2));
-            cart = [];
-            updateCartUI();
-        }
-
-        function showPage(pageTarget) {
-            const homeView = document.getElementById('home-view
+      
