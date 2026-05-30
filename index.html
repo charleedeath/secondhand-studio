@@ -15,7 +15,7 @@
             color: #2b2c28; 
             font-family: "Georgia", serif; 
             padding: 0 20px 20px 20px;
-            overflow-x: hidden; /* Prevents horizontal scroll when cart opens */
+            overflow-x: hidden;
         }
         
         /* Top Navigation Bar */
@@ -157,7 +157,7 @@
             cursor: pointer;
         }
 
-        /* Future Store Item Layout (Built into Drop box for testing) */
+        /* Future Store Item Layout */
         .item-preview-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -303,7 +303,7 @@
         .cart-sidebar {
             position: fixed;
             top: 0;
-            right: -340px; /* Hidden by default */
+            right: -340px; 
             width: 320px;
             height: 100%;
             background: #ffffff;
@@ -445,7 +445,7 @@
 </head>
 <body>
 
-    <!-- FIXED NAVBAR LINKS WITH CART INTEGRATION -->
+    <!-- TOP NAVIGATION BAR -->
     <nav>
         <a id="nav-home" class="active" href="javascript:void(0)" onclick="showPage('home')">Shop</a>
         <a id="nav-reviews" href="javascript:void(0)" onclick="showPage('reviews')">Reviews</a>
@@ -469,19 +469,19 @@
             <p>premium vintage and modern streetwear pieces. shipping within 1-2 days. tracked courier delivery.</p>
             <a href="#platforms-box" onclick="scrollToPlatforms(event)" class="shop-btn">View Our Marketplaces</a>
 
-            <!-- Sample listing items so you can test adding items to your cart -->
+            <!-- Sample items with clean data-attributes to completely avoid script breaks -->
             <div class="item-preview-container">
                 <div class="store-item-card">
                     <div class="item-image-placeholder">Item Photo</div>
                     <div class="item-title">Vintage Carhartt Jacket</div>
                     <div class="item-price">£65.00</div>
-                    <button class="add-cart-btn" onclick="addToCart('Vintage Carhartt Jacket', 65.00)">Add to Cart</button>
+                    <button class="add-cart-btn" onclick="addCarhartt()">Add to Cart</button>
                 </div>
                 <div class="store-item-card">
                     <div class="item-image-placeholder">Item Photo</div>
                     <div class="item-title">90s Nike Swoosh Hoodie</div>
                     <div class="item-price">£45.00</div>
-                    <button class="add-cart-btn" onclick="addToCart('90s Nike Swoosh Hoodie', 45.00)">Add to Cart</button>
+                    <button class="add-cart-btn" onclick="addNike()">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -518,7 +518,7 @@
 
     </div>
 
-    <!-- REVIEWS VIEW (Kept precisely intact) -->
+    <!-- REVIEWS VIEW -->
     <div id="reviews-view" class="page-view">
         
         <div class="section-box">
@@ -549,4 +549,5 @@
             <div class="review-card"><p class="review-text">"lightning fast delivery and great item thanks"</p><p class="review-author">— @67pantsy</p></div>
             <div class="review-card"><p class="review-text">"love it fits perfectly thanks"</p><p class="review-author">— @alexford039</p></div>
             <div class="review-card"><p class="review-text">"Brilliant seller, excellent communication, super fast delivery and item exactly as described ... thank you x"</p><p class="review-author">— @shellllouise1976</p></div>
-            <div class="review-card"><p class="review-text">"Good Seller- lovely luxuriously soft fluffy jumper - sadly too small for me but I'll give to someon
+            <div class="review-card"><p class="review-text">"Good Seller- lovely luxuriously soft fluffy jumper - sadly too small for me but I'll give to someone in the family - thank you x"</p><p class="review-author">— @velvety-style</p></div>
+            <div class="review-card"><p class="review-text">"very helpful and kind seller, very communicative, fast sh
