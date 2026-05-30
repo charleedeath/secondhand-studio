@@ -15,7 +15,6 @@
             color: #2b2c28; 
             font-family: "Georgia", serif; 
             padding: 0 20px 20px 20px;
-            overflow-x: hidden;
         }
         
         /* Top Navigation Bar */
@@ -88,7 +87,7 @@
             margin-top: 10px;
         }
 
-        /* View Switching Logic */
+        /* Views handling system */
         .page-view {
             display: none; 
         }
@@ -96,7 +95,7 @@
             display: block; 
         }
 
-        /* Layout Cards */
+        /* Content Blocks */
         .section-box {
             max-width: 500px;
             margin: 0 auto 30px auto;
@@ -115,6 +114,7 @@
             letter-spacing: 0.5px;
         }
 
+        /* Typography layout matching Vinted screenshot text */
         .drop-soon-box {
             max-width: 500px;
             margin: 0 auto 30px auto;
@@ -156,54 +156,7 @@
             cursor: pointer;
         }
 
-        .preview-store-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 25px;
-        }
-        .preview-item-box {
-            background: #fbfbfa;
-            border: 1px solid #eaeae5;
-            border-radius: 12px;
-            padding: 12px;
-            text-align: left;
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-        .preview-item-img {
-            width: 100%;
-            aspect-ratio: 1/1;
-            background-color: #eaeae5;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            color: #72756d;
-            margin-bottom: 8px;
-        }
-        .preview-item-name {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #2b2c28;
-        }
-        .preview-item-price {
-            font-size: 0.85rem;
-            color: #525749;
-            margin: 2px 0 8px 0;
-        }
-        .add-to-cart-trigger {
-            width: 100%;
-            background-color: #525749;
-            color: white;
-            border: none;
-            padding: 8px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
+        /* Marketplace Platforms Grid */
         .platform-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -228,7 +181,7 @@
             background: #f1f0ea;
         }
 
-        /* Reviews Wall Display */
+        /* Review Board Styling */
         .review-stats {
             text-align: center;
             margin-bottom: 25px;
@@ -291,136 +244,6 @@
             background-color: rgba(82, 87, 73, 0.05);
         }
 
-        /* Cart UI Overlay Drawer */
-        .side-cart-panel {
-            position: fixed;
-            top: 0;
-            right: -340px; 
-            width: 320px;
-            height: 100%;
-            background: #ffffff;
-            box-shadow: -4px 0 20px rgba(0,0,0,0.08);
-            z-index: 1000;
-            transition: right 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            border-left: 1px solid #e3e2dc;
-        }
-        .side-cart-panel.cart-is-open {
-            right: 0;
-        }
-        .side-cart-header {
-            padding: 20px;
-            border-bottom: 1px solid #e3e2dc;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .side-cart-header h3 {
-            font-size: 1.1rem;
-            color: #2b2c28;
-        }
-        .side-cart-close {
-            background: none;
-            border: none;
-            font-size: 1.4rem;
-            cursor: pointer;
-            color: #72756d;
-        }
-        .side-cart-body {
-            flex: 1;
-            overflow-y: auto;
-            padding: 20px;
-        }
-        .cart-empty-text {
-            color: #72756d;
-            text-align: center;
-            font-size: 0.9rem;
-            margin-top: 40px;
-        }
-        .side-cart-item-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #f0efe9;
-        }
-        .side-cart-item-title {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #2b2c28;
-        }
-        .side-cart-item-cost {
-            font-size: 0.85rem;
-            color: #72756d;
-            margin-top: 2px;
-            display: block;
-        }
-        .cart-qty-adjuster {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 5px;
-        }
-        .cart-qty-pill {
-            background: #f1f0ea;
-            border: none;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            font-size: 0.8rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .cart-remove-trigger {
-            background: none;
-            border: none;
-            color: #c75a5a;
-            font-size: 0.8rem;
-            cursor: pointer;
-        }
-        .side-cart-footer {
-            padding: 20px;
-            border-top: 1px solid #e3e2dc;
-            background: #fbfbfa;
-        }
-        .side-cart-total-row {
-            display: flex;
-            justify-content: space-between;
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 15px;
-            color: #2b2c28;
-        }
-        .side-cart-checkout {
-            width: 100%;
-            background-color: #525749;
-            color: white;
-            border: none;
-            padding: 14px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-        }
-        .side-cart-darkener {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.1);
-            z-index: 999;
-            display: none;
-        }
-        .side-cart-darkener.cart-is-open {
-            display: block;
-        }
-
         footer {
             text-align: center;
             margin-top: 60px;
@@ -433,11 +256,10 @@
 </head>
 <body>
 
-    <!-- STABLE NAVIGATION SYSTEM COMPATIBLE WITH GITHUB PAGES -->
+    <!-- FIXED NAVBAR LINKS WITH EXPLICIT PLACEHOLDERS -->
     <nav>
-        <a id="nav-home" class="active" onclick="switchToTab('home')">Shop</a>
-        <a id="nav-reviews" onclick="switchToTab('reviews')">Reviews</a>
-        <a id="nav-cart-btn" onclick="toggleCartDisplay(true)">Cart (<span id="cart-pill-count">0</span>)</a>
+        <a id="nav-home" class="active" href="javascript:void(0)" onclick="showPage('home')">Shop</a>
+        <a id="nav-reviews" href="javascript:void(0)" onclick="showPage('reviews')">Reviews</a>
     </nav>
 
     <header>
@@ -449,27 +271,12 @@
         <p>curated sustainable fashion</p>
     </header>
 
-    <!-- SHOPPING MODULE VIEW -->
     <div id="home-view" class="page-view active-view">
+        
         <div class="drop-soon-box">
             <h2>drop 01 coming soon...</h2>
             <p>premium vintage and modern streetwear pieces. shipping within 1-2 days. tracked courier delivery.</p>
             <a href="#platforms-box" onclick="scrollToPlatforms(event)" class="shop-btn">View Our Marketplaces</a>
-
-            <div class="preview-store-grid">
-                <div class="preview-item-box">
-                    <div class="preview-item-img">Item Photo</div>
-                    <div class="preview-item-name">Vintage Carhartt Jacket</div>
-                    <div class="preview-item-price">£65.00</div>
-                    <button class="add-to-cart-trigger" onclick="pushToBag('Vintage Carhartt Jacket', 65.00)">Add to Cart</button>
-                </div>
-                <div class="preview-item-box">
-                    <div class="preview-item-img">Item Photo</div>
-                    <div class="preview-item-name">90s Nike Swoosh Hoodie</div>
-                    <div class="preview-item-price">£45.00</div>
-                    <button class="add-to-cart-trigger" onclick="pushToBag('90s Nike Swoosh Hoodie', 45.00)">Add to Cart</button>
-                </div>
-            </div>
         </div>
 
         <div class="section-box" id="platforms-box">
@@ -488,22 +295,27 @@
                 <div class="stats-text">4.9 / 5.0 Rating</div>
                 <div class="stats-sub">Based on 159 sales history</div>
             </div>
+
             <div class="review-card">
                 <p class="review-text">"Very beautiful thank you very much! Great communication A+++++ seller"</p>
                 <p class="review-author">— @monang23</p>
             </div>
+
             <div class="review-card">
                 <p class="review-text">"Packed so well and such a kind person! Didn’t have any issues whatsoever :)"</p>
                 <p class="review-author">— @erin040724</p>
             </div>
-            <button class="view-all-btn" onclick="switchToTab('reviews')">Read All Reviews</button>
+
+            <button class="view-all-btn" onclick="showPage('reviews')">Read All Reviews</button>
         </div>
+
     </div>
 
-    <!-- REVIEWS ENGINE VIEW -->
     <div id="reviews-view" class="page-view">
+        
         <div class="section-box">
             <h2>Complete Review Wall</h2>
+            
             <div class="review-stats">
                 <div class="stars">★★★★★</div>
                 <div class="stats-text">159 Positive Sales Transactions</div>
@@ -521,7 +333,7 @@
             <div class="review-card"><p class="review-text">"Better delivery time than Amazon! Thanks so much"</p><p class="review-author">— @stormsski</p></div>
             <div class="review-card"><p class="review-text">"Arrived today, I love it. Great seller"</p><p class="review-author">— @t3ddi3</p></div>
             <div class="review-card"><p class="review-text">"Thank you. Wonderful winter themed packaging too such a nice touch"</p><p class="review-author">— @babika2312</p></div>
-            <div class="review-card"><p class="review-text">"literally posted the same day and came in such cute packaging!"</p><p class="review-author">— @Deleted_member</p></div>
+            <div class="review-card"><p class="review-text">"literally posted the same day and came in such cute packaging!"</p><p class="review-author">— @Deleted member</p></div>
             <div class="review-card"><p class="review-text">"Amazing seller - everything arrived in perfect condition"</p><p class="review-author">— @adibdin</p></div>
             <div class="review-card"><p class="review-text">"The item was perfect!!!"</p><p class="review-author">— @smegasaurs</p></div>
             <div class="review-card"><p class="review-text">"Love the packaging. Amazing condition."</p><p class="review-author">— @airupcola</p></div>
@@ -529,7 +341,68 @@
             <div class="review-card"><p class="review-text">"lightning fast delivery and great item thanks"</p><p class="review-author">— @67pantsy</p></div>
             <div class="review-card"><p class="review-text">"love it fits perfectly thanks"</p><p class="review-author">— @alexford039</p></div>
             <div class="review-card"><p class="review-text">"Brilliant seller, excellent communication, super fast delivery and item exactly as described ... thank you x"</p><p class="review-author">— @shellllouise1976</p></div>
-            <div class="review-card"><p class="review-text">"Good Seller- lovely luxuriously soft fluffy jumper - sadly too small for me but I’ll give to someone in the family - thank you x"</p><p class="review-author">— @velvety-style</p></div>
+            <div class="review-card"><p class="review-text">"Good Seller- lovely luxuriously soft fluffy jumper - sadly too small for me but I'll give to someone in the family - thank you x"</p><p class="review-author">— @velvety-style</p></div>
             <div class="review-card"><p class="review-text">"very helpful and kind seller, very communicative, fast shipping and cute top!!"</p><p class="review-author">— @krlkkma</p></div>
             <div class="review-card"><p class="review-text">"lovely item thank you xx"</p><p class="review-author">— @_emilyy_jones_</p></div>
-            <div class="review-card"><p class="review-text">"Highly recommend, fast postage and items perfectly described"</p><p class="review-author
+            <div class="review-card"><p class="review-text">"Highly recommend, fast postage and items perfectly described"</p><p class="review-author">— @amythg</p></div>
+            <div class="review-card"><p class="review-text">"lovely item and fast delivery thank you x"</p><p class="review-author">— @hollylucas7</p></div>
+            <div class="review-card"><p class="review-text">"Brilliant seller fast postage highly recommend"</p><p class="review-author">— @bethanyclarkx</p></div>
+            <div class="review-card"><p class="review-text">"Item exactly as described, fast shipping thank you!"</p><p class="review-author">— @gracieelizabeth1</p></div>
+            <div class="review-card"><p class="review-text">"Fab seller, super fast shipping! Thank you x"</p><p class="review-author">— @kieralouise_</p></div>
+            <div class="review-card"><p class="review-text">"Very beautiful thank you very much! Great communication A+++++ seller"</p><p class="review-author">— @monang23</p></div>
+            <div class="review-card"><p class="review-text">"Packed so well and such a kind person! Didn’t have any issues whatsoever :)"</p><p class="review-author">— @erin040724</p></div>
+            <div class="review-card"><p class="review-text">"perfect condition and fast shipping, thank you!! xx"</p><p class="review-author">— @abarnes_</p></div>
+            <div class="review-card"><p class="review-text">"Great communication, fast shipping, lovely item x"</p><p class="review-author">— @annafitzyyy</p></div>
+            <div class="review-card"><p class="review-text">"Great supplier to deal with, item exactly as described and packed very well"</p><p class="review-author">— @sami270615</p></div>
+            <div class="review-card"><p class="review-text">"Lovely item, friendly communication and prompt delivery. Happy with my purchase. Many thanks x"</p><p class="review-author">— @vladarya1102</p></div>
+            <div class="review-card"><p class="review-text">"Lovely seller, quick response and delivery! Xx"</p><p class="review-author">— @_mali_</p></div>
+            <div class="review-card"><p class="review-text">"Item exactly as described. Shipped super fast! Thank you :)"</p><p class="review-author">— @georgia_t_</p></div>
+            <div class="review-card"><p class="review-text">"perfect xx"</p><p class="review-author">— @chloe_428</p></div>
+            <div class="review-card"><p class="review-text">"Everything was great, as described, fast contact and shipping. I highly recommend it."</p><p class="review-author">— @marcint12</p></div>
+            <div class="review-card"><p class="review-text">"lovely item, super fast delivery, thank you!"</p><p class="review-author">— @p_rebecca</p></div>
+            <div class="review-card"><p class="review-text">"Super fast delivery and great communication, lovely seller thank you x"</p><p class="review-author">— @v_o_c</p></div>
+            <div class="review-card"><p class="review-text">"Perfect condition, quick dispatch. Thank you :)"</p><p class="review-author">— @kels1602</p></div>
+            <div class="review-card"><p class="review-text">"lovely and quick delivery which i needed for my sisters bday! thanks so much x"</p><p class="review-author">— @jodie_cherubini</p></div>
+            <div class="review-card"><p class="review-text">"perfect, thank you x"</p><p class="review-author">— @madyyy080597</p></div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 SECONDHAND.STUDIO
+    </footer>
+
+    <script>
+        function showPage(pageTarget) {
+            const homeView = document.getElementById('home-view');
+            const reviewsView = document.getElementById('reviews-view');
+            const navHome = document.getElementById('nav-home');
+            const navReviews = document.getElementById('nav-reviews');
+
+            if (pageTarget === 'home') {
+                homeView.classList.add('active-view');
+                reviewsView.classList.remove('active-view');
+                navHome.classList.add('active');
+                navReviews.classList.remove('active');
+            } else if (pageTarget === 'reviews') {
+                homeView.classList.remove('active-view');
+                reviewsView.classList.add('active-view');
+                navHome.classList.remove('active');
+                navReviews.classList.add('active');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function scrollToPlatforms(event) {
+            event.preventDefault();
+            const targetElement = document.getElementById('platforms-box');
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+
+</body>
+                </html>
+                
